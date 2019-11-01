@@ -1,0 +1,30 @@
+<div>
+  <button {{on "click" this.loadSomething}}>
+    Load something
+
+    {{#if this.isLoadingSomething}}
+      <Spinner />
+    {{/if}}
+  </button>
+
+</div>
+
+<div>
+  <button {{on "click" this.loadSomethingElse}}>
+    Load something else
+
+    {{#if this.isLoadingSomethingElse}}
+      <Spinner />
+    {{/if}}
+  </button>
+</div>
+
+<div>
+  <button {{on "click" this.loadSomethingElseIndeed}}>
+    This won't trigger global loading
+
+    {{#if this.isLoadingSomethingElseIndeed}}
+      <Spinner @local={{true}} />
+    {{/if}}
+  </button>
+</div>
